@@ -125,6 +125,7 @@
         "show_quantity_selector": true,
         "show_order_by": true,
         "show_copy_text": true,
+        "copy_text": "Military and First Responder discounts available at checkout.",
         "nutrition_facts_title": "NUTRITION FACTS"
       }
     },
@@ -294,6 +295,7 @@
     },
     "product_reviews_9Cny8q": {
       "type": "product-reviews",
+      "disabled": true,
       "settings": {
         "title": "CUSTOMER REVIEWS"
       }
