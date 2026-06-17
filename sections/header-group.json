@@ -66,7 +66,6 @@
         "featured_media_desktop_qJde9g": {
           "type": "featured_media_desktop",
           "settings": {
-            "featured_desktop_image": "shopify://shop_images/NAV_MENU_CARD_-_Desktop_1.jpg",
             "featured_desktop_image_link": "shopify://pages/shop-strength-collection",
             "image_overlay_color": "",
             "featured_desktop_image_title": "",
@@ -77,7 +76,6 @@
         "featured_media_mobile_g3FYik": {
           "type": "featured_media_mobile",
           "settings": {
-            "featured_mobile_image": "shopify://shop_images/NAV_MENU_CARD_-_Mobile_1.jpg",
             "featured_mobile_image_link": "shopify://pages/shop-strength-collection",
             "image_overlay_color": "",
             "featured_mobile_image_title": "",
@@ -105,14 +103,13 @@
       ],
       "custom_css": [],
       "settings": {
-        "menu": "dev-desktop-menu-v2-strength",
-        "mobile_menu": "dev-mobile-menu-v2-strength",
+        "menu": "main-menu-desktop",
+        "mobile_menu": "main-menu-desktop",
         "main_cta_text": "SHOP ALL SUPPLEMENTS",
         "main_cta_link": "shopify://collections/performance-nutrition",
         "mobile_cta_copy": "",
         "mobile_cta_text": "Download our app",
         "mobile_cta_link": "https://apps.apple.com/us/app/bpn-supps/id1478543231",
-        "rotational_offer_image": "shopify://shop_images/NAV_MENU_CARD_-_Mobile_1.jpg",
         "rotational_offer_link": "shopify://pages/shop-strength-collection"
       }
     }
