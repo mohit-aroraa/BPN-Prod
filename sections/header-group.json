@@ -66,7 +66,8 @@
         "featured_media_desktop_qJde9g": {
           "type": "featured_media_desktop",
           "settings": {
-            "featured_desktop_image_link": "shopify://pages/shop-strength-collection",
+            "featured_desktop_image": "shopify://shop_images/products_bpntee1-min.jpg",
+            "featured_desktop_image_link": "shopify://products/bpn-x-rhone-black-tee",
             "image_overlay_color": "",
             "featured_desktop_image_title": "",
             "featured_desktop_image_cta_text": "",
