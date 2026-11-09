@@ -31,7 +31,7 @@
                 height="200"
               >
               {%- assign foorloop_index = id | plus: forloop.index -%}
-              {% render 'prismic-responsive-image' with image: block[image_key] max_width: 640, max_height: 520, aspect_ratio: 1.23, image_class: "categoryBlock__image" wrapper_class:"categoryBlock__image--desktop", image_attributes: 'width="418" height="380"' random_id: foorloop_index %}
+              {% render 'prismic-responsive-image' with image, image: block[image_key], max_width: 640, max_height: 520, aspect_ratio: 1.23, image_class: "categoryBlock__image", wrapper_class: "categoryBlock__image--desktop", image_attributes: 'width="418" height="380"', random_id: foorloop_index %}
               <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
             </div>
             <div class="categoryBlock__action">
@@ -46,3 +46,19 @@
     </div>
   </div>
 </section>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''prismic-responsive-image'' with image: block[image_key] max_width:
+    640, max_height: 520, aspect_ratio: 1.23, image_class: "categoryBlock__image"
+    wrapper_class:"categoryBlock__image--desktop", image_attributes: ''width="418"
+    height="380"'' random_id: foorloop_index %}'
+  to: '{% render ''prismic-responsive-image'' with image, image: block[image_key],
+    max_width: 640, max_height: 520, aspect_ratio: 1.23, image_class: "categoryBlock__image",
+    wrapper_class: "categoryBlock__image--desktop", image_attributes: ''width="418"
+    height="380"'', random_id: foorloop_index %}'
+  position: 1777..2063
+{% endcomment %}

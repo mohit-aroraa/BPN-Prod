@@ -10,5 +10,15 @@
     </p>
   </div>
 </div>
-{%- assign metafields = pages.404.metafields -%}
+{%- assign metafields = pages['404'].metafields -%}
 {% include 'prismic-dynamic-slices', section: metafields %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- assign metafields = pages.404.metafields -%}"
+  to: "{%- assign metafields = pages['404'].metafields -%}"
+  position: 355..406
+{% endcomment %}

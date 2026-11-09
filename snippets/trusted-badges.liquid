@@ -14,10 +14,19 @@
 
             <div class="trustedBadges__block">
                 <div class="trustedBadges__icon">
-                    {% render 'prismic-responsive-image' with image: block[icon_key], %}
+                    {% render 'prismic-responsive-image' with image, image: block[icon_key] %}
                 </div>
                 <p class="trustedBadges__text">{{block[text_key]}}</p>
             </div>
         {% endfor %}
     </div>
-</section>
+</section>{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'prismic-responsive-image' with image: block[icon_key], %}"
+  to: "{% render 'prismic-responsive-image' with image, image: block[icon_key] %}"
+  position: 642..716
+{%- endcomment -%}

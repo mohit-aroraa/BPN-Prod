@@ -6,7 +6,7 @@
   <div class="featuredCard">
     <div class="featuredCard__image">
       <a href="{{ article.url }}" title="{{ article.title }}">
-        {% render 'shopify-responsive-image' with image: article.image, image_attributes:'width="240px" height="218px"' %}
+        {% render 'shopify-responsive-image' with image, image: article.image, image_attributes: 'width="240px" height="218px"' %}
       </a>
     </div>
     <div class="featuredCard__content">
@@ -15,3 +15,15 @@
     </div>
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''shopify-responsive-image'' with image: article.image, image_attributes:''width="240px"
+    height="218px"'' %}'
+  to: '{% render ''shopify-responsive-image'' with image, image: article.image, image_attributes:
+    ''width="240px" height="218px"'' %}'
+  position: 249..371
+{% endcomment %}

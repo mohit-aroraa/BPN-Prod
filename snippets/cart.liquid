@@ -26,7 +26,7 @@
         amount: {{ threshold.amount |  json }},
         label: {{ threshold.label |  json }},
         message: "{{ threshold.message }}",
-        freeGiftProduct: {% if threshold.free_gift.value | json %}
+        freeGiftProduct: {% if threshold.free_gift.value %}
         {
           id: {{ threshold.free_gift.value.id | json }},
           title: {{ threshold.free_gift.value.title | json }}
@@ -46,3 +46,13 @@
 
 <!-- Cart drawer mount point -->
 <div id='cart'></div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% if threshold.free_gift.value | json %}"
+  to: "{% if threshold.free_gift.value %}"
+  position: 1302..1336
+{% endcomment %}

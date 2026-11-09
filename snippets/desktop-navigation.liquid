@@ -10,7 +10,7 @@
       {%- assign _hover_color = 'hover_color_' | append: index -%}
       {%- assign _is_mobile = 'is_mobile_' | append: index -%}
       {%- assign _is_megamenu = 'is_megamenu_' | append: index -%}
-      {% unless !navigation[_is_mobile] %}
+      {% unless navigation[_is_mobile] %}
         {% if navigation[_enable] %}
           {% assign click_id_suffix = navigation[_title] | downcase | replace: 'apparel & ', '' %}
           {% assign click_id_suffix = click_id_suffix | replace: 'start here: take the quiz', 'quiz' %}
@@ -44,3 +44,13 @@
     {% endfor %}
   </ul>
 </nav>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% unless !navigation[_is_mobile] %}"
+  to: "{% unless navigation[_is_mobile] %}"
+  position: 619..654
+{% endcomment %}

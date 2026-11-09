@@ -38,11 +38,11 @@ js-discount-conetent
     <div class="discountContent__inner">
       <div class="discountContent__aside">
         <div class="discountContent__image is-desktop">
-          {% render 'prismic-responsive-image' with image: desktop_image %}
+          {% render 'prismic-responsive-image' with image, image: desktop_image %}
         </div>
 
         <div class="discountContent__image is-mobile">
-          {% render 'prismic-responsive-image' with image: mobile_image %}
+          {% render 'prismic-responsive-image' with image, image: mobile_image %}
         </div>
       </div>
 
@@ -70,3 +70,16 @@ js-discount-conetent
     </div>
   </div>
 </section>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'prismic-responsive-image' with image: desktop_image %}"
+  to: "{% render 'prismic-responsive-image' with image, image: desktop_image %}"
+  position: 1463..1535
+- from: "{% render 'prismic-responsive-image' with image: mobile_image %}"
+  to: "{% render 'prismic-responsive-image' with image, image: mobile_image %}"
+  position: 1617..1688
+{% endcomment %}

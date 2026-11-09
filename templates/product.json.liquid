@@ -7,7 +7,7 @@
   {%- assign collection_name = {{block_content['collection_handle'] | strip}} -%}
 {%- endcomment -%}
 
-{%- assign collection_name = {{block_content['collection_handle'] | strip}} -%}
+{%- assign collection_name = block_content.collection_handle | strip -%}
 
 {%- assign current_products = collections[collection_name] -%}
 
@@ -73,3 +73,14 @@
 {% endcapture %}
 
 {{ jsonExample | strip }}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- assign collection_name = {{block_content['collection_handle'] | strip}}
+    -%}"
+  to: "{%- assign collection_name = block_content.collection_handle | strip -%}"
+  position: 252..324
+{% endcomment %}

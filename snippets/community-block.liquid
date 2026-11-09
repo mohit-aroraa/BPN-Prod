@@ -99,7 +99,7 @@
               <div class="featuredCard">
                 <div class="featuredCard__image">
                   <a href="{{block[link_key] | strip }}" title="{{ block[text_key] }}">
-                    {% render 'prismic-responsive-image' with image: block[image_key], image_attributes:'width="240px" height="218px"' %}
+                    {% render 'prismic-responsive-image' with image, image: block[image_key], image_attributes: 'width="240px" height="218px"' %}
                   </a>
                 </div>
                 <div class="featuredCard__content">
@@ -134,3 +134,15 @@
     </div>
   </div>
 </section>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''prismic-responsive-image'' with image: block[image_key], image_attributes:''width="240px"
+    height="218px"'' %}'
+  to: '{% render ''prismic-responsive-image'' with image, image: block[image_key],
+    image_attributes: ''width="240px" height="218px"'' %}'
+  position: 3571..3696
+{% endcomment %}

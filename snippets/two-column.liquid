@@ -23,7 +23,7 @@
   <div class="twoColumnGrid__container twoColumnGrid__container--pdp {% if bock_type == "review" %}twoColumnGrid__container--review{% else %}twoColumnGrid__container--details{% endif %}">
     <div class="twoColumnGrid__mediaBlock {% if bock_type == "review" %}twoColumnGrid__mediaBlock--review{% else %}twoColumnGrid__mediaBlock--details{% endif %}">
       {% if image.size > 0 %}
-        {% render 'prismic-responsive-image' with image: image image_attributes: image_attributes image_attributes: 'width="640" height="640"', random_id: id %}
+        {% render 'prismic-responsive-image' with image, image: image, image_attributes: 'width="640" height="640"', random_id: id %}
       {% endif %}
       {% if video_iframe %}
         <div class="twoColumnGrid__videoEmbed">
@@ -66,3 +66,16 @@
     </div>
   </div>
 </section>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''prismic-responsive-image'' with image: image image_attributes:
+    image_attributes image_attributes: ''width="640" height="640"'', random_id: id
+    %}'
+  to: '{% render ''prismic-responsive-image'' with image, image: image, image_attributes:
+    ''width="640" height="640"'', random_id: id %}'
+  position: 1298..1423
+{% endcomment %}

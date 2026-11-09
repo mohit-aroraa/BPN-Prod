@@ -12,7 +12,7 @@
       <div class="productGridItem productGridItem--flannel productGridItem--flannel">
         <div class="productGridItem__media">
           <a href="/products/{{ product.handle }}" class="productGridItem__mediaLink">
-            {% render 'shopify-responsive-image' with image: product.featured_image, image_attributes: 'width="320" height="320"' %}
+            {% render 'shopify-responsive-image' with image, image: product.featured_image, image_attributes: 'width="320" height="320"' %}
           </a>
         </div>
         <div class="productGridItem__ProductDetails">
@@ -101,9 +101,26 @@
     {% endfor %}
     {% if banner_image != blank %}
       <div class="flannelProductGrid__banner">
-        {% render 'prismic-responsive-image' with image: banner_image, image_attributes: 'width="416" height="535"' %}
+        {% render 'prismic-responsive-image' with image, image: banner_image, image_attributes: 'width="416" height="535"' %}
         <div class="flannelProductGrid__bannerText" style="--color: {{ text_color }}">{{ text }}</div>
       </div>
     {% endif %}
   </div>
 </section>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''shopify-responsive-image'' with image: product.featured_image,
+    image_attributes: ''width="320" height="320"'' %}'
+  to: '{% render ''shopify-responsive-image'' with image, image: product.featured_image,
+    image_attributes: ''width="320" height="320"'' %}'
+  position: 837..964
+- from: '{% render ''prismic-responsive-image'' with image: banner_image, image_attributes:
+    ''width="416" height="535"'' %}'
+  to: '{% render ''prismic-responsive-image'' with image, image: banner_image, image_attributes:
+    ''width="416" height="535"'' %}'
+  position: 5020..5137
+{% endcomment %}

@@ -11,7 +11,7 @@
 
 <section class="landingPageBanner {% if layout %}landingPageBanner--imageLeft{% endif %}">
   <div class="landingPageBanner__image">
-    {% render 'prismic-responsive-image' with image: image, image_attributes: 'width="320" height="280"', random_id: id %}
+    {% render 'prismic-responsive-image' with image, image: image, image_attributes: 'width="320" height="280"', random_id: id %}
   </div>
   <div class="landingPageBanner__content">
     <h1 class="landingPageBanner__header">{% render 'prismic-rich-text', rich_text: header %}</h1>
@@ -27,3 +27,15 @@
     {% endif %}
   </div>
 </section>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''prismic-responsive-image'' with image: image, image_attributes:
+    ''width="320" height="280"'', random_id: id %}'
+  to: '{% render ''prismic-responsive-image'' with image, image: image, image_attributes:
+    ''width="320" height="280"'', random_id: id %}'
+  position: 481..606
+{% endcomment %}

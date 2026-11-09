@@ -19,7 +19,7 @@
           {%- assign wrapper_class = "js-variant-image-wrapper" -%}
           {%- assign wrapper_attributes = "data-variant-id='" | append: variant.id | append: "'" -%}
           {%- unless selected_variant == variant -%}{%- assign wrapper_class = "js-variant-image-wrapper hide" -%}{%- endunless-%}
-          {% render 'shopify-responsive-image' with image: variant.image, aspect_ratio: 1, image_attributes: 'width="320" height="320"', wrapper_class: wrapper_class, wrapper_attributes: wrapper_attributes %}
+          {% render 'shopify-responsive-image' with image, image: variant.image, aspect_ratio: 1, image_attributes: 'width="320" height="320"', wrapper_class: wrapper_class, wrapper_attributes: wrapper_attributes %}
         {%- endcapture -%}
       {%- capture upsell_select_options -%}
           {{ upsell_select_options }}
@@ -130,3 +130,17 @@
   {%- assign upsell_dropdown_markup = null -%}
   {%- assign variant_images = null -%}
 {%- endfor -%}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''shopify-responsive-image'' with image: variant.image, aspect_ratio:
+    1, image_attributes: ''width="320" height="320"'', wrapper_class: wrapper_class,
+    wrapper_attributes: wrapper_attributes %}'
+  to: '{% render ''shopify-responsive-image'' with image, image: variant.image, aspect_ratio:
+    1, image_attributes: ''width="320" height="320"'', wrapper_class: wrapper_class,
+    wrapper_attributes: wrapper_attributes %}'
+  position: 1126..1331
+{% endcomment %}

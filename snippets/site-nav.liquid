@@ -114,9 +114,9 @@
                                   {% liquid 
                                     assign lp     = forloop.index 
                                     assign lnkTtl = 'lnkTtl_' | append: lp
-                                    assign ttl    = [lnkTtl] | default: grandchildlink.title
+                                    assign ttl = self[lnkTtl] | default: grandchildlink.title
                                     assign lnkImg = 'lnkImg_' | append: lp
-                                    assign img    = [lnkImg]
+                                    assign img = self[lnkImg]
                                   %}
                                   <a href="{{ grandchildlink.url }}" class="inner-container">
                                     {% include 'snippet--image', 
@@ -237,3 +237,16 @@
   
 </ul>
 
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "                                    assign ttl    = [lnkTtl] | default: grandchildlink.title\r"
+  to: "                                    assign ttl = self[lnkTtl] | default: grandchildlink.title"
+  position: 5046..5139
+- from: "                                    assign img    = [lnkImg]\r"
+  to: "                                    assign img = self[lnkImg]"
+  position: 5216..5277
+{% endcomment %}

@@ -20,8 +20,8 @@
   style="--height-desktop:{{height_on_desktop}}px;--height-mobile:{{ height_on_mob }}px;--text-color:{{ text_color }}"
 >
   <div class="siteBanner__wrapper">
-    {% render 'prismic-responsive-image' with image: banner_img_desktop, wrapper_class:'responsive-image__wrapper--desktop' image_class:"siteBanner__image" image_attributes: 'width="1440" height="561"', image_attributes: "aria-hidden='true'" %}
-    {% render 'prismic-responsive-image' with image: banner_img_mob, wrapper_class:'responsive-image__wrapper--mobile' image_class:"siteBanner__image" image_attributes: 'width="1440" height="561"', image_attributes: "aria-hidden='true'" %}
+    {% render 'prismic-responsive-image' with image, image: banner_img_desktop, wrapper_class: 'responsive-image__wrapper--desktop', image_class: "siteBanner__image", image_attributes: "aria-hidden='true'" %}
+    {% render 'prismic-responsive-image' with image, image: banner_img_mob, wrapper_class: 'responsive-image__wrapper--mobile', image_class: "siteBanner__image", image_attributes: "aria-hidden='true'" %}
     <div
       class="siteBanner__overlay"
       style="--overlay-background-color:{{overlay_color}};--opacity:{{overlay_opacity}}"
@@ -46,3 +46,24 @@
     </div>
   </div>
 </section>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''prismic-responsive-image'' with image: banner_img_desktop, wrapper_class:''responsive-image__wrapper--desktop''
+    image_class:"siteBanner__image" image_attributes: ''width="1440" height="561"'',
+    image_attributes: "aria-hidden=''true''" %}'
+  to: '{% render ''prismic-responsive-image'' with image, image: banner_img_desktop,
+    wrapper_class: ''responsive-image__wrapper--desktop'', image_class: "siteBanner__image",
+    image_attributes: "aria-hidden=''true''" %}'
+  position: 1298..1502
+- from: '{% render ''prismic-responsive-image'' with image: banner_img_mob, wrapper_class:''responsive-image__wrapper--mobile''
+    image_class:"siteBanner__image" image_attributes: ''width="1440" height="561"'',
+    image_attributes: "aria-hidden=''true''" %}'
+  to: '{% render ''prismic-responsive-image'' with image, image: banner_img_mob, wrapper_class:
+    ''responsive-image__wrapper--mobile'', image_class: "siteBanner__image", image_attributes:
+    "aria-hidden=''true''" %}'
+  position: 1507..1706
+{% endcomment %}

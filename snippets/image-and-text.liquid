@@ -37,10 +37,10 @@
     <div class="imageAndText__inner">
       <div class="imageAndText__aside">
         <div class="imageAndText__image is-desktop">
-          {% render 'prismic-responsive-image' with image: desktop_image, random: id %}
+          {% render 'prismic-responsive-image' with image, image: desktop_image, random: id %}
         </div>
         <div class="imageAndText__image is-mobile">
-          {% render 'prismic-responsive-image' with image: mobile_image, random_id: id %}
+          {% render 'prismic-responsive-image' with image, image: mobile_image, random_id: id %}
         </div>
       </div>
 
@@ -72,3 +72,20 @@
     </div>
   </div>
 </section>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'prismic-responsive-image' with image: desktop_image, random: id
+    %}"
+  to: "{% render 'prismic-responsive-image' with image, image: desktop_image, random:
+    id %}"
+  position: 1485..1569
+- from: "{% render 'prismic-responsive-image' with image: mobile_image, random_id:
+    id %}"
+  to: "{% render 'prismic-responsive-image' with image, image: mobile_image, random_id:
+    id %}"
+  position: 1647..1733
+{% endcomment %}

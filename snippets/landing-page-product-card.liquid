@@ -73,9 +73,9 @@
   {% endunless %}
   <div class="landingPageProductCard__image">
     {% if featured_image != blank %}
-      {% render 'prismic-responsive-image' with image: featured_image, image_attributes: 'width="300" height="320"' %}
+      {% render 'prismic-responsive-image' with image, image: featured_image, image_attributes: 'width="300" height="320"' %}
     {%- else -%}
-      {% render 'shopify-responsive-image' with image: product_object.featured_image, image_attributes: 'width="300" height="320"' %}
+      {% render 'shopify-responsive-image' with image, image: product_object.featured_image, image_attributes: 'width="300" height="320"' %}
     {% endif %}
   </div>
   <div class="landingPageProductCard__details">
@@ -135,3 +135,20 @@
     <p class="landingPageProductCard__error"></p>
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''prismic-responsive-image'' with image: featured_image, image_attributes:
+    ''width="300" height="320"'' %}'
+  to: '{% render ''prismic-responsive-image'' with image, image: featured_image, image_attributes:
+    ''width="300" height="320"'' %}'
+  position: 3366..3485
+- from: '{% render ''shopify-responsive-image'' with image: product_object.featured_image,
+    image_attributes: ''width="300" height="320"'' %}'
+  to: '{% render ''shopify-responsive-image'' with image, image: product_object.featured_image,
+    image_attributes: ''width="300" height="320"'' %}'
+  position: 3509..3643
+{% endcomment %}
